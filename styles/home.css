@@ -1,0 +1,157 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #5D1049;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    height: 22vh;
+
+}
+nav .area{
+    position: relative;
+    width: 65%;
+    height: 85%;
+    padding: 0;
+    position: relative;
+    margin:0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row !important;
+
+}
+
+
+nav .area .logo{
+    width: 15%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+nav .area .placeholder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav img{
+    height: 80%;
+    width: auto;
+    transform: scale(0.9);
+
+}
+
+nav .area .menu{
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* put first div on top 2nd on bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .area .calender{
+    width: 25%;
+    height: 90%;
+    background-color: #E32125;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+nav .area .menu .top{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+nav .area .menu .bottom{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dropdown-holder-small{
+    width: 40%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+}
+.dropdown-holder-large{
+    width: 60%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.dropdown{
+    width: 80%;
+    height: 70%;
+    background-color: #891D6D;
+    border-radius: 25px;
+    /* place object in center */
+}
+header {
+    /* set half of background as black other as white */
+    background: linear-gradient(180deg, #5D1049 50%, white 50%);
+    height: 11vh;
+    display: grid;
+    place-items: center;
+}
+header .area{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+header .area .button{
+    width: 8.4vh;
+    height: 60%;
+    display: grid;
+    place-items: center;
+    background-color: #891D6D;
+    background-color: #E32125;
+    border-radius: 25px;
+}
+header .area .dropdown{
+    width: 42%;
+    background-color: #E32125;
+}
+.promotion{
+    width: 100%;
+    background-color: #5D1049;
+    padding: 0vw 10vw;
+}
+.promotion h1{
+    color: white;
+    font-family: 'Noto Sans';
+    font-weight: 400;
+}
+
