@@ -77,6 +77,11 @@ nav div a{
 }
 .logo{
     padding: 0em 1em;
+    
+}
+.logo img{
+    height: 4.2em;
+    width: auto;
 }
 #current{
     background-color: #FF5BD3;
@@ -171,7 +176,7 @@ nav div a{
 
 .tickets{
     width: 68%;
-    height: 90%;
+    height: 87%;
 
     border-radius: 20px;
     overflow-y: scroll;
@@ -192,6 +197,12 @@ nav div a{
     background-color: #DDED2E;
     border-radius: 20px 0px 0px 20px;
 }
+.ticket .colour2{
+    width: 5%;
+    height: 100%;
+    background-color: #FF5BD3;
+    border-radius: 20px 0px 0px 20px;
+}
 .ticket .content{
     
     width: 76%;
@@ -209,7 +220,7 @@ nav div a{
     display: grid;
     place-items: center;
     margin-right: 1%; 
-
+    color: #FF5BD3;
 }
 .calender{
     width: 100vw;
@@ -310,10 +321,7 @@ nav div a{
     top:100%;
 }
 .ticket .content{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
 }
 .columns{
     width: 100%;
@@ -401,8 +409,31 @@ nav div a{
     margin: 0;
     padding: 0;
 }
-#bottom{
-    vertical-align:bottom;
-
-
+.top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
+.bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bottom-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.duration
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+

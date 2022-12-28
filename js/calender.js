@@ -1,5 +1,7 @@
 var start = 0;
 var end = 0;
+
+locations = ["MOARIS", "OENOTRIa", "PLANUM", "LUCUS","MENSA", "GORDII "]
 function monthToDay(month){
     console.log(month)
     switch (month) {
@@ -56,7 +58,9 @@ function comparedates(day1, month1, year1, day2, month2, year2) {
     }
 }
 
-
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
 function createmonth(month, year){
     
@@ -312,19 +316,50 @@ function search(){
     content = "";
     // pick a random number between 5 and 8 
     var num = Math.floor(Math.random() * 4) + 5;
+    // pick a random number between 0 and 5 included
 
     for (i = 0; i < num; i++) {
         content += `
         <div class="ticket">
             <div class="colour">
-
+                
             </div>
             <div class="content">
+
+                    <div class="top-left">
+                        <div class="locs">
+                            <div class="left">
+                                <h2>${location[random(0,5)]}</h2>
+                                <h1>IXE</h1>
+                            </div>
+                            <img class="between" src="https://media.discordapp.net/attachments/809808517568790558/1057686462696525894/image.png">
+                            <div class="right">
+                                <h2>${location[random(5,10)]}</h2>
+                                <h1>IXE</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <div class="time">
+                            12:00
+                        </div>
+                    </div>
+
+                    <div class="bottom-left">
+                        <div class="company">
+                        <img class="airline" src="https://media.discordapp.net/attachments/809808517568790558/1057695191483547678/image.png" alt="airline">
+                        <h1>PEPSICO SPACE</h1>
+                        </div>
+                    </div>
+
+                        <div class="duration">
+                            3h 14m
+                        </div>
 
             </div>
             <div class = "price">
                 <h1>₹ 10,000</h1>
-                </div>
+            </div>
         </div>
         `
     }
