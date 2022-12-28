@@ -200,8 +200,14 @@ nav div a{
 .ticket .colour2{
     width: 5%;
     height: 100%;
-    background-color: #FF5BD3;
+    background-color: #11D5E6;
     border-radius: 20px 0px 0px 20px;
+}
+.colour1{
+    color : #DDED2E !important;
+}
+.colour2{
+    color : #11D5E6 !important;
 }
 .ticket .content{
     

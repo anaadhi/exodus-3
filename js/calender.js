@@ -262,7 +262,7 @@ function highlight(element){
                 }
             }
             if (document.getElementById(day2 +","+ month2 + "," +year2).className != "selected1"){
-                element.className = "selected";
+                element.className = "selected2";
                 }
         }
         
@@ -358,7 +358,7 @@ function search(){
 
             </div>
             <div class = "price">
-                <h1>₹ 10,000</h1>
+                <h1 class="colour2">₹ 10,000</h1>
             </div>
         </div>
         `
