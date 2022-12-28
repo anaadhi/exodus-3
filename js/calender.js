@@ -169,9 +169,90 @@ function add(day , month, year){
     } else {
         end = day +","+ month + "," +year;
         document.getElementById("calender").className = "calender hidden";
-        
-        document.getElementById('dep').innerText = start.split(",")[0] + " " + monthToDay(start.split(",")[1]) + " " + start.split(",")[2];
-        document.getElementById('ret').innerText = end.split(",")[0] + " " + monthToDay(month) + " " + end.split(",")[2];
+        // convert start.split(",")[1] to month
+        var month1 = start.split(",")[1];
+        // convert to string
+        month1 = String(month1);
+        console.log(month1 , month)
+        switch (month1) {
+            case "0":
+                month = "Jan";
+                break;
+            case "1":
+                month = "Feb";
+                break;
+            case "2":
+                month = "March";
+                break;
+            case "3":
+                month = "April";
+                break;
+            case "4":
+                month = "May";
+                break;
+            case "5":
+                month = "June";
+                break;
+            case "6":
+                month = "July";
+                break;
+            case "7":
+                month = "Aug";
+                break;
+            case "8":
+                month = "Sept";
+                break;
+            case "9":
+                month = "Octr";
+                break;
+            case "10":
+                month = "Nov";
+                break;
+            case "11":
+                month = "Dec";
+                break;
+        }
+        switch (month) {
+            case "0":
+                month = "Jan";
+                break;
+            case "1":
+                month = "Feb";
+                break;
+            case "2":
+                month = "March";
+                break;
+            case "3":
+                month = "April";
+                break;
+            case "4":
+                month = "May";
+                break;
+            case "5":
+                month = "June";
+                break;
+            case "6":
+                month = "July";
+                break;
+            case "7":
+                month = "Aug";
+                break;
+            case "8":
+                month = "Sept";
+                break;
+            case "9":
+                month = "Octr";
+                break;
+            case "10":
+                month = "Nov";
+                break;
+            case "11":
+                month = "Dec";
+                break;
+        }
+
+        document.getElementById('dep').innerText = start.split(",")[0] + " " + month + " " + start.split(",")[2];
+        document.getElementById('ret').innerText = end.split(",")[0] + " " + month + " " + end.split(",")[2];
         start = 0;
         end = 0;
     }

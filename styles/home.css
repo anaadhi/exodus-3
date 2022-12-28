@@ -443,3 +443,60 @@ nav div a{
     right: 0;
 }
 
+/* media quaries */
+
+@media screen and (max-width: 480px) {
+    body{
+        overflow: scroll;
+    }
+    nav{
+        display: none;
+    }
+    .content{
+        height: auto;
+        margin-top: 0;
+        padding-top: 0;
+        display: block;
+    }
+    .hidden{
+        top: -100vh;
+    }
+    .side-bar {
+        width: 90%;
+        margin: 5% 5%;
+    }
+    .tickets{
+        width: 90%;
+        margin: 5% 5%;
+    }
+    .ticket{
+        font-size: 0.5em;
+        height: 15vh;
+    }
+
+    @keyframes slideIn {
+        0% {
+            top: -88.2vh;
+        }
+        100% {
+            top: 0;
+        }
+    }
+    .calender{
+        height: 100vh;
+    }
+    .visible{
+        top:0;
+    }
+    .month{
+        width: 90%;
+        margin: 0 5%;
+    }
+    .between{
+        margin: 0;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+    }
+
+  }
