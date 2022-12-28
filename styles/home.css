@@ -151,6 +151,10 @@ nav div a{
     padding-right: 2px;
     padding-left: 0;
 }
+.side-bar div h1 .right img{
+    width: 1.2em;
+    height: 1.2em;
+}
 .side-bar div button{
     cursor: pointer;
     width: 90%;
@@ -246,10 +250,11 @@ nav div a{
     display: block;
 
 }
-.month h1{
+.month h2{
     font-family: poppins;
     font-size: 1.6em;
     font-weight: 500;
+    margin-bottom: 4vh;
 }
 .week{
     width: 100%;
@@ -263,19 +268,141 @@ nav div a{
 }
 .week h2{
     width: 14%;
-    height: 2.5vw;
-    line-height: 2.5vw;
+    height: 3.5vw;
+    line-height: 3.5vw;
     
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: poppins;
     font-weight: 500;
     display: inline-block;
     color: white;
     cursor: pointer;
     text-align: center;
+ 
 }
 .past{
     color: #fff;
     opacity: 0.1;
+}
+.selected{
+    background-color: #FF5BD3;
+}
+.selected1{
+    border-radius: 20px 0 0 20px;
+    background-color: #FF5BD3;
+}
+.selected2{
+    border-radius: 0 20px 20px 0;
+    background-color: #FF5BD3;
+}
+.corner2{
+    border-radius: 20px 0 0 20px;
+}
+.corner1{
+    border-radius: 0 20px 20px 0;
+}
+.dropdown{
+    width: 100%;
+    height: 5vw;
+    margin: 2.5vh 0;
+    position: absolute;
+    top:100%;
+}
+.ticket .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.columns{
+    width: 100%;
+
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.time {
+    margin-right: 1.5vw;
+    margin-top: 1.5vh;
+    font-family: poppins;
+    font-size: 1.6em;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.duration{
+    margin-right: 1.5vw;
+    margin-bottom: 1.5vh;
+    font-family: poppins;
+    font-size: 1.6em;
+    font-weight: 300;
+    position: absolute;
+}
+.airline{
+    height: 1.2em;
+    width:auto;
+    display: inline-block;
+    font-family: 'poppins';
+    font-weight: 300;
+
+}
+.company h1{
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: 0;
+
+}
+.company{
+    margin-left: 1.5vw;
+    margin-bottom: 2.5vh;
+    font-size: 1.3em;
+    
+}
+.locs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 25vw;
+    margin-top: 1.5vh;
+    margin-left: 1.5vh;
+}
+.between{
+    height: 25%;
+    width: auto;
+    margin: 0px 10px;
+    transform: scale(0.5);
+}
+.locs .left{
+    text-align: right;
+}
+.locs .left h1{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.locs .left h2{
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.locs .right h1{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.locs .right h2{
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+#bottom{
+    vertical-align:bottom;
+
+
 }

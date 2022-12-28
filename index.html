@@ -36,36 +36,69 @@
     <section class = "content">
     <section class="side-bar">
         <div>
-            <h1 onclick="calender1()"><div class="left">Departure Date</div>
-            <div class="right">a</div></h1>
+            <h1 onclick="calender1()"><div class="left" id = "dep">Departure Date</div>
+            <div class="right"><img src="https://cdn.discordapp.com/attachments/809808517568790558/1057666615845605406/calendar.png" alt="cal"/></div></h1>
             </h1>
             <h2 class="to">To</h2>
             <h1 onclick="calender1()">
-                <div class="left">Return Date</div>
-                <div class="right">a</div>
+                <div class="left" id = "ret">Return Date</div>
+                <div class="right"><img src="https://cdn.discordapp.com/attachments/809808517568790558/1057666615845605406/calendar.png" alt="cal"/></div>
             </h1>
             <h1>
-                <div class="left" style="font-weight:500">Russia</div>
+                <div class="left" style="font-weight:500" onclick="dropdown(this)">Russia</div>
                 <div class="right">ICE</div>
             </h1>
+            
             <h1>
-                <div class="left" style="font-weight:500">Manglore</div>
+                <div class="left" style="font-weight:500" onclick="dropdown(this)">Manglore</div>
                 <div class="right">IXE</div>
             </h1>
             <button>Search</button>
         </div>
     </section>
-    <section class="tickets">
+    <section class="tickets" id = "tickets">
         <div class="ticket">
             <div class="colour">
-
+                
             </div>
             <div class="content">
-
+                <!-- <div class="columns"> -->
+                    <div class="top-left">
+                        <div class="locs">
+                            <div class="left">
+                                <h2>Manglore</h2>
+                                <h1>IXE</h1>
+                            </div>
+                            <img class="between" src="https://media.discordapp.net/attachments/809808517568790558/1057686462696525894/image.png">
+                            <div class="right">
+                                <h2>Manglore</h2>
+                                <h1>IXE</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-right">
+                        <div class="time">
+                            12:00
+                        </div>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="columns" id="bottom"> -->
+                    <div class="bottom-left">
+                        <div class="company">
+                        <img class="airline" src="https://media.discordapp.net/attachments/809808517568790558/1057695191483547678/image.png" alt="airline">
+                        <h1>PEPSICO SPACE</h1>
+                        </div>
+                    </div>
+                    <div class="bottom-right">
+                        <div class="duration">
+                            3h 14m
+                        </div>
+                    </div>
+                <!-- </div> -->
             </div>
             <div class = "price">
                 <h1>₹ 10,000</h1>
-                </div>
+            </div>
         </div>
 
         <div class="ticket">

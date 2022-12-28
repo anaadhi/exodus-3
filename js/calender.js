@@ -1,5 +1,63 @@
-var start = NaN;
-var end = NaN;
+var start = 0;
+var end = 0;
+function monthToDay(month){
+    console.log(month)
+    switch (month) {
+        case 0:
+            month = "January";
+            break;
+        case 1:
+            month = "February";
+            break;
+        case 2:
+            month = "March";
+            break;
+        case 3:
+            month = "April";
+            break;
+        case 4:
+            month = "May";
+            break;
+        case 5:
+            month = "June";
+            break;
+        case 6:
+            month = "July";
+            break;
+        case 7:
+            month = "August";
+            break;
+        case 8:
+            month = "September";
+            break;
+        case 9:
+            month = "October";
+            break;
+        case 10:
+            month = "November";
+            break;
+        case 11:
+            month = "December";
+            break;
+    }
+    return month;
+}
+function comparedates(day1, month1, year1, day2, month2, year2) {
+    // convert day1 month1 year1 to date1
+    date1 = new Date(year1, month1, day1);
+    // convert day2 month2 year2 to date2
+    date2 = new Date(year2, month2, day2);
+    // compare date1 and date2
+    if (date1 >= date2) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
 function createmonth(month, year){
     
     if (month == new Date().getMonth() && year == new Date().getFullYear()) {
@@ -13,6 +71,7 @@ function createmonth(month, year){
     var firstday = new Date(year, month, 1).getDay();
 
     calender = document.getElementById("calender")
+    var monthnum = month; 
     // convert month to string
     switch (month) {
         case 0:
@@ -66,11 +125,18 @@ function createmonth(month, year){
     for (i = 1; i <= daysinmonth; i++) {
         // if day is less than today then add class "past"
         if (i < day) {
+            
             content += "<h2 class=\"past\">" + i + "</h2>";
         }
         else {
-            content += "<h2 onclick='add()'>" + i + "</h2>";
-        }
+            if (week == 6) {
+                content += `<h2 id="${i},${monthnum},${year}" onclick='add(${i},"${monthnum}",${year})' onmouseover="highlight(this)" onmouseout="rem(this)" style="border-radius: 0 20px 20px 0;">` + i + "</h2>"
+            } else if (week == 0) {
+                content += `<h2 id="${i},${monthnum},${year}" onclick='add(${i},"${monthnum}",${year})' onmouseover="highlight(this)" onmouseout="rem(this)" style="border-radius: 20px 0 0 20px;">` + i + "</h2>"
+            } else {
+            content += `<h2 id="${i},${monthnum},${year}" onclick='add(${i},"${monthnum}",${year})' onmouseover="highlight(this)" onmouseout="rem(this)">` + i + "</h2>";
+            }
+        }   
         week += 1;
         if (week == 7) {
             content += "</div><div class=\"week\">";
@@ -90,6 +156,23 @@ function createmonth(month, year){
     content += "</div>";
     calender.innerHTML += content;
 }
+
+function add(day , month, year){
+    console.log(start)
+    if (start == 0) {
+        start = day +","+ month + "," +year;
+        document.getElementById(day +","+ month + "," +year).className = "selected1";
+    } else {
+        end = day +","+ month + "," +year;
+        document.getElementById("calender").className = "calender hidden";
+        
+        document.getElementById('dep').innerText = start.split(",")[0] + " " + monthToDay(start.split(",")[1]) + " " + start.split(",")[2];
+        document.getElementById('ret').innerText = end.split(",")[0] + " " + monthToDay(month) + " " + end.split(",")[2];
+        start = 0;
+        end = 0;
+    }
+}
+
 
 function calendermaker(){
     var month = new Date().getMonth();
@@ -138,11 +221,115 @@ function calender1(){
     // change class of calender to "calender visible"
     document.getElementById("calender").className = "calender visible";
     console.log("hello")
-    start = NaN;
-    end = NaN;
+    start = 0;
+    end = 0;
     
 }
 
+function highlight(element){
+    if (start != 0) {
+        // get the id of the element
+        var id = element.id;
+        // split the id to get day, month and year
+        var id = id.split(",");
+        var day = id[0];
+        var month = id[1];
+        var year = id[2];
+        day2 = start.split(",")[0] ;
+        month2 = start.split(",")[1];
+        year2 = start.split(",")[2];
+
+        console.log(start)
+        if(comparedates(day, month, year, start.split(",")[0], start.split(",")[1], start.split(",")[2])){
+            // go to all days between start and end and change their class to "selected"
+            while (day != day2 || month != month2 || year != year2) {
+                if (document.getElementById(day2 +","+ month2 + "," +year2).className != "selected1"){
+                
+                    document.getElementById(day2 +","+ month2 + "," +year2).className = "selected";
+                }
+                day2 = parseInt(day2) + 1;
+                if (day2 > new Date(year2, month2+1, 0).getDate()) {
+                    day2 = 1;
+                    month2 = parseInt(month2) + 1;
+                    if (month2 > 11) {
+                        month2 = 0;
+                        year2 = parseInt(year2) + 1;
+                    }
+                }
+            }
+            if (document.getElementById(day2 +","+ month2 + "," +year2).className != "selected1"){
+                element.className = "selected";
+                }
+        }
+        
+
+    }
+}
+function rem(element)
+{
+    if (start != 0) {
+        // get the id of the element
+        var id = element.id;
+        // split the id to get day, month and year
+        var id = id.split(",");
+        var day = id[0];
+        var month = id[1];
+        var year = id[2];
+        day2 = start.split(",")[0] ;
+        month2 = start.split(",")[1];
+        year2 = start.split(",")[2];
+
+        console.log(start)
+        if(comparedates(day, month, year, start.split(",")[0], start.split(",")[1], start.split(",")[2])){
+            // go to all days between start and end and change their class to "selected"
+            while (day != day2 || month != month2 || year != year2) {
+                if (document.getElementById(day2 +","+ month2 + "," +year2).className != "selected1"){
+                
+                document.getElementById(day2 +","+ month2 + "," +year2).className = "";
+                }
+                day2 = parseInt(day2) + 1;
+                if (day2 > new Date(year2, month2+1, 0).getDate()) {
+                    day2 = 1;
+                    month2 = parseInt(month2) + 1;
+                    if (month2 > 11) {
+                        month2 = 0;
+                        year2 = parseInt(year2) + 1;
+                    }
+                }
+            }
+            if (document.getElementById(day2 +","+ month2 + "," +year2).className != "selected1"){
+                element.className = "";
+                }
+        }
+        
+
+    }
+
+}
+
+function search(){
+    tickets = document.getElementById('tickets')
+    content = "";
+    // pick a random number between 5 and 8 
+    var num = Math.floor(Math.random() * 4) + 5;
+
+    for (i = 0; i < num; i++) {
+        content += `
+        <div class="ticket">
+            <div class="colour">
+
+            </div>
+            <div class="content">
+
+            </div>
+            <div class = "price">
+                <h1>₹ 10,000</h1>
+                </div>
+        </div>
+        `
+    }
+
+}
 
 
 
