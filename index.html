@@ -4,65 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="./styles/home.css">
     <title>Flight</title>
+
+    
 </head>
 <body>
-    <nav>
-        <div class="area">
-            <div class="logo">
-                <div class="placeholder">
+    <section class="calender hidden" id = "calender">
 
-                    <img src="https://media.discordapp.net/attachments/809808517568790558/1056992397810212904/image.png" alt="logo">
-                </div>
-            </div>
-            <div class="menu">
-                <div class="top">
-                    <div class="dropdown-holder-small">
-                        <div class="dropdown"></div>
-                    </div>
-                    <div class="dropdown-holder-large">
-                        <div class="dropdown"></div>
-                        </div>
-                </div>
-                <div class="bottom">
-                    <div class="dropdown-holder-small">
-                        <div class="dropdown"></div>
-                    </div>
-                    <div class="dropdown-holder-large">
-                        <div class="dropdown"></div>
-                        </div>
-                
-                </div>
-            </div>
-            <div class="calender" id = "calender">
+        <div class="empty">
 
-            </div>
         </div>
-    </nav>
-    <header>
-        <div class="area">
-            <div class="dropdown">
-
-            </div>
-            <div class="button">
-                
-            </div>
-            <div class="dropdown">
-                </div>
-        </div>
-    </header>
-
-    <section class="promotion">
-        <h1>Travel Packs</h1>
-        <div class="martianresort">
-            
-        </div>
+        
     </section>
 
-    <style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap'); </style>
+    <nav>
+        <div class="logo">
+            <img src="./images/logo.png" alt="logo">
+        </div>
+        <div id="current">
+            <a href="index.html">Air Bus</a>
+        </div>
+        <div>
+            <a href="about.html">Hotels</a>
+        </div>
+        <div>
+            <a href="contact.html">Experiences</a>
+        </div>
+    </nav>
+    <section class = "content">
+    <section class="side-bar">
+        <div>
+            <h1 onclick="calender1()"><div class="left">Departure Date</div>
+            <div class="right">a</div></h1>
+            </h1>
+            <h2 class="to">To</h2>
+            <h1 onclick="calender1()">
+                <div class="left">Return Date</div>
+                <div class="right">a</div>
+            </h1>
+            <h1>
+                <div class="left" style="font-weight:500">Russia</div>
+                <div class="right">ICE</div>
+            </h1>
+            <h1>
+                <div class="left" style="font-weight:500">Manglore</div>
+                <div class="right">IXE</div>
+            </h1>
+            <button>Search</button>
+        </div>
+    </section>
+    <section class="tickets">
+        <div class="ticket">
+            <div class="colour">
+
+            </div>
+            <div class="content">
+
+            </div>
+            <div class = "price">
+                <h1>₹ 10,000</h1>
+                </div>
+        </div>
+
+        <div class="ticket">
+            <div class="colour">
+
+            </div>
+            <div class="content">
+
+            </div>
+            <div class = "price">
+                <h1>₹ 10,000</h1>
+                </div>
+        </div>
+
+        <div class="ticket">
+            <div class="colour">
+
+            </div>
+            <div class="content">
+
+            </div>
+            <div class = "price">
+                <h1>₹ 10,000</h1>
+                </div>
+        </div>
+    </section>
+    </section>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+        </style>
     <script src="./js/calender.js"></script>
 </body>
 </html>

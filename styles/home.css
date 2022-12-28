@@ -1,157 +1,281 @@
-
-body {
-    margin: 0;
-    padding: 0;
+:root {
+    --code-color: darkred;
+    --code-bg-color: #aaaaaa;
+    --code-font-size: 14px;
+    --code-line-height: 1.4;
+    --scroll-bar-color: black;
+    --scroll-bar-bg-color: transparent;
 }
 
+pre {
+    color: var(--code-color);
+    font-size: var(--code-font-size);
+    line-height: var(--code-line-height);
+    background-color: var(--code-bg-color);
+}
+
+.code-block {
+    max-height: 100px;
+    overflow: auto;
+    padding: 8px 7px 5px 15px;
+    margin: 0px 0px 0px 0px;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-corner { background: rgba(0,0,0,0.5); }
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
+}
+
+
+body{
+    background-color: #1C1C26;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 nav {
-    background-color: #5D1049;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    height: 22vh;
-
-}
-nav .area{
-    position: relative;
-    width: 65%;
-    height: 85%;
-    padding: 0;
-    position: relative;
-    margin:0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 2.4vh 0vw;
+    background-color: #333344;
+    color: white;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: row !important;
-
+    position: relative;
+    z-index: 3;
+    height: 7vh;
 }
-
-
-nav .area .logo{
-    width: 15%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+nav div{
+    margin: 0vw 4vw;
+    padding: 0.75em 5em;
 }
-nav .area .placeholder{
+nav div:hover{
+    cursor: pointer;
+}
+nav div a{
+    text-decoration: none;
+    color: white;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+}
+.logo{
+    padding: 0em 1em;
+}
+#current{
+    background-color: #FF5BD3;
+    border-radius: 15px;
+}
+.content{
+    height: 84vh;
+    margin-top: 3vh;
     width: 100%;
-    height: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.side-bar{
+    width: 20%;
+    height: 90%;
+    background-color: #38384B;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-nav img{
-    height: 80%;
-    width: auto;
-    transform: scale(0.9);
-
-}
-
-nav .area .menu{
-    width: 60%;
-    height: 100%;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    /* put first div on top 2nd on bottom */
+.side-bar div{
+    width: 77%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-
-nav .area .calender{
-    width: 25%;
-    height: 90%;
-    background-color: #E32125;
-    border-radius: 25px;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
-
-nav .area .menu .top{
-    width: 100%;
-    height: 50%;
+.side-bar div h1{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: row;
-}
-nav .area .menu .bottom{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-}
-
-.dropdown-holder-small{
-    width: 40%;
-    height: 100%;
-
-    display: grid;
-    place-items: center;
-
-}
-.dropdown-holder-large{
-    width: 60%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-}
-
-.dropdown{
-    width: 80%;
-    height: 70%;
-    background-color: #891D6D;
-    border-radius: 25px;
-    /* place object in center */
-}
-header {
-    /* set half of background as black other as white */
-    background: linear-gradient(180deg, #5D1049 50%, white 50%);
-    height: 11vh;
-    display: grid;
-    place-items: center;
-}
-header .area{
-    width: 75%;
-    height: 100%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-}
-header .area .button{
-    width: 8.4vh;
-    height: 60%;
-    display: grid;
-    place-items: center;
-    background-color: #891D6D;
-    background-color: #E32125;
-    border-radius: 25px;
-}
-header .area .dropdown{
-    width: 42%;
-    background-color: #E32125;
-}
-.promotion{
     width: 100%;
-    background-color: #5D1049;
-    padding: 0vw 10vw;
+    font-weight: 300;
+    font-family: 'poppins';
+    padding: 0 0;
+    border-bottom: 2px solid #DDED2E;
 }
-.promotion h1{
+.side-bar div h2{
+    font-size: 1.2em;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    font-family: 'poppins';
+    text-align: center;
+    padding: 0.5 0.5em;
+    margin: 1vh 0;
+    margin-top: 2vh;
+    
+}
+.side-bar div h1:hover{
+    cursor: pointer;
+}
+.side-bar div h1 div{
+    padding: 0.5em 0.5em;
+}
+.side-bar div h1 .left{
+    width: auto;
+    text-align: left;
+    padding-left: 2px;
+    padding-right: 0;
+}
+.side-bar div h1 .right{
+    width: auto;
+    text-align: right;
+    padding-right: 2px;
+    padding-left: 0;
+}
+.side-bar div button{
+    cursor: pointer;
+    width: 90%;
+    padding: 0.55em 1.5em;
+    background-color: #FF5BD3;
+    border: none;
+    border-radius: 15px;
     color: white;
-    font-family: 'Noto Sans';
-    font-weight: 400;
+    font-family: 'poppins';
+    font-weight: 500;
+    font-size: 1.2em;
+    margin: 5vh 0vh;
 }
 
+.tickets{
+    width: 68%;
+    height: 90%;
+
+    border-radius: 20px;
+    overflow-y: scroll;
+
+}
+.ticket{
+    width: 100%;
+    height: 29%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0;
+    margin-bottom: 4%;
+}
+.ticket .colour{
+    width: 5%;
+    height: 100%;
+    background-color: #DDED2E;
+    border-radius: 20px 0px 0px 20px;
+}
+.ticket .content{
+    
+    width: 76%;
+    height: 100%;
+    background-color: #38384B;
+    margin: 0;
+    margin-right: 0.4%; 
+}
+.ticket .price{
+
+    border-radius: 0px 20px 20px 0px;
+    width: 17.6%;
+    height: 100%;
+    background-color: #38384B;
+    display: grid;
+    place-items: center;
+    margin-right: 1%; 
+
+}
+.calender{
+    width: 100vw;
+    height: 93vh;
+    background-color: #111120;
+    position: absolute;
+    top: -93vh;
+    z-index: 2;
+    overflow-y: scroll;
+}
+.hidden{
+    top: -88.2vh;
+}
+.visible{
+    top: 11.8vh;
+    animation: slideIn 0.5s ease-in-out;
+}
+/* play a animation on visible */
+
+@keyframes slideIn {
+    0% {
+        top: -88.2vh;
+    }
+    100% {
+        top: 11.8vh;
+    }
+}
+
+.empty{
+    width: 100%;
+    height: 15vh;
+    display: block;
+
+}
+.month{
+    width: 60vw;
+    margin: 0vw 15vw;
+    display: block;
+
+}
+.month h1{
+    font-family: poppins;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+.week{
+    width: 100%;
+    height: 5vw;
+    margin: 2.5vh 0;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.week h2{
+    width: 14%;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    
+    margin: 0;
+    font-size: 1.2em;
+    font-family: poppins;
+    font-weight: 500;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.past{
+    color: #fff;
+    opacity: 0.1;
+}
